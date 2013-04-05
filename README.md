@@ -1,22 +1,21 @@
-BButton
-========
+Pointed BButton
+===============
 
-BButton is a subclass of UIButton that looks like the [bootstrap](http://twitter.github.com/bootstrap/ "Twitter Bootstrap") buttons.<br />
-It's really easy to use even if you're a beginner in Objective-C.<br />
-It has beautiful graphics for retina display.<br />
-You can customize it to the color you want in just one line of code.<br />
+This is an extension of BButton to create pointed buttons, similar to the UINavigationController back buttons.
 
-<img width=267 src="http://img13.imageshack.us/img13/5408/capturedcran20120731113.png"/>
+For BButton information see the Githun Repo of Mathieu Bolard: 
+https://github.com/mattlawer/BButton
 
+<img width=261 src="http://img805.imageshack.us/img805/884/pointedbbuttons.png" />
 
 Usage
 -----
 
-Start by importing <code>BButton.m</code> and <code>BButton.h</code> to your Xcode project.
+Assuming you have already imported BButton, start by importing <code>PointedBButton.m</code> and <code>BButton.h</code> to your Xcode project.
 
 ### Use it with Interface Builder : ###
 
-1. Create an UIButton in Interface Builder and change the class to BButton :<br />
+1. Create an UIButton in Interface Builder and change the class to PointedBButton :<br />
 <img width=261 src="http://img827.imageshack.us/img827/6596/ibbbutton.png"/>
 
 2. You can set the target and selector with Interface Builder just like you do with an UIButton.
@@ -24,16 +23,17 @@ Start by importing <code>BButton.m</code> and <code>BButton.h</code> to your Xco
 
 ### Use it without Interface Builder : ###
 
-1. Import the BButton class header :
+1. Import the PointedBButton class header :
 
-		#import "BButton.h"
+		#import "PointedBButton.h"
 		
-2. Create the BButton and add it to a visible view :
+2. Create the PointedBButton and add it to a visible view :
 
-		BButton *btn = [[BButton alloc] initWithFrame:CGRectMake(32.0, 20.0, 112.0, 40.0)];
+		PointedBButton *btn = [[PointedBButton alloc] initWithFrame:CGRectMake(32.0, 20.0, 112.0, 40.0)];
         [btn setTitle:@"Login" forState:UIControlStateNormal]; // Set the button title
         [btn addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
         btn.color = [UIColor purpleColor]; // Set purple color
+        [btn setDirection:PointedButtonDirectionLeft];
         [self.view addSubview:btn];
         [btn release];
     
@@ -41,35 +41,13 @@ Start by importing <code>BButton.m</code> and <code>BButton.h</code> to your Xco
 Example
 -------
 
-With some random colors
-
-<img width=396 src="http://img703.imageshack.us/img703/7316/20120731114603.png"/>
-
-Use with FontAwesome icons
---------------------------
-
-With the BButton+FontAwesome category, you get to style your BButtons with FontAwesome icons.
-There are convenience class methods to setup new BButtons and instance methods to apply FontAwesomeness to existing BButtons.
-Use the instance methods on BButtons that you created in Interface Builder, it keeps the button's frame as well as color and font size if you don't specify those.
-
-You can specify the icon by name, a color and a font size. Only the icon name is mandatory.
-To find the right icon name, you can refer to the FontAwesomeIcons.html in this repository.
-The icon names also get autocompleted in Xcode.
-
-<img width=100 src="http://imageshack.us/a/img11/74/bbuttonfontawesome.png"/>
-
-####Requirement:####
- * You need the FontAwesome font, which you can get here: https://github.com/leberwurstsaft/FontAwesome-for-iOS (I had to fix the font to correctly align vertically)
- * Add it to your project and make sure it gets copied in the 'Copy Bundle Resources' build phase.
- * Edit Info.plist to include the provided font like so:
-
-<img src="http://imageshack.us/a/img339/9596/bbuttonfontawesomexcode.png">
+Example ith some random colors see above.
 
 License
 -------
 
-Copyright (c) 2012, Mathieu Bolard
-All rights reserved.
+Copyright for BButton (c) 2013 Mathieu Bolard. All rights reserved.
+Copyright (c) 2013, Sascha Mundstein. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
  
@@ -84,6 +62,4 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 Contact
 -------
 
-mattlawer08@gmail.com<br />
-http://mathieubolard.com<br />
-http://twitter.com/mattlawer
+mundstein@post.harvard.edu
