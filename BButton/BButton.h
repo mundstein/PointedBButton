@@ -23,8 +23,10 @@ typedef enum {
     CGGradientRef _gradient;
 }
 
-@property (nonatomic, assign) UIColor *color;
+@property (nonatomic, weak) UIColor *color;
 
 - (void)setType:(BButtonType)type;
+- (UIBezierPath *)getShapeInRect:(CGRect)rect forContext:(CGContextRef)context;
+- (void)setup; 
 
 @end

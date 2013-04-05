@@ -8,6 +8,7 @@
 
 #import "MBViewController.h"
 #import "BButton.h"
+#import "PointedBButton.h"
 
 @interface MBViewController ()
 - (UIColor *)randomColor;
@@ -23,12 +24,15 @@
     
     for (int i=0; i<2; i++) {
         for (int j=0; j<5; j++) {
-            BButton *btn = [[BButton alloc] initWithFrame:CGRectMake(32.0+(i*144.0), 20.0+(j*60.0), 112.0, 40.0)];
-            [btn setTitle:@"Login" forState:UIControlStateNormal];
+            PointedBButton *btn = [[PointedBButton alloc] initWithFrame:CGRectMake(32.0+(i*144.0), 20.0+(j*60.0), 112.0, 40.0)];
+			CGRect f = btn.frame;
+			f.size.height -= j*4; 
+			btn.frame = f;
+            [btn setTitle: (i%2) ? @"Right" : @"Left" forState:UIControlStateNormal];
+            [btn setDirection:i%2+1];
             [btn addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
             btn.color = [self bootstrapColor];
             [self.view addSubview:btn];
-            [btn release];
         }
     }
     

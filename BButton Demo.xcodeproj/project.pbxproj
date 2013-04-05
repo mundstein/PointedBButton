@@ -17,6 +17,7 @@
 		4EA2644215C73DA600F375FA /* MBViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA2644015C73DA600F375FA /* MBViewController_iPhone.xib */; };
 		4EA2644515C73DA700F375FA /* MBViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA2644315C73DA700F375FA /* MBViewController_iPad.xib */; };
 		4EA2644D15C73DE600F375FA /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA2644C15C73DE600F375FA /* BButton.m */; };
+		B8BC4AA3170F13D0006AF8BC /* PointedBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BC4AA2170F13D0006AF8BC /* PointedBButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		4EA2644415C73DA700F375FA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MBViewController_iPad.xib; sourceTree = "<group>"; };
 		4EA2644B15C73DE600F375FA /* BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BButton.h; path = BButton/BButton.h; sourceTree = SOURCE_ROOT; };
 		4EA2644C15C73DE600F375FA /* BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BButton.m; path = BButton/BButton.m; sourceTree = SOURCE_ROOT; };
+		B8BC4AA1170F13D0006AF8BC /* PointedBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PointedBButton.h; path = BButton/PointedBButton.h; sourceTree = SOURCE_ROOT; };
+		B8BC4AA2170F13D0006AF8BC /* PointedBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PointedBButton.m; path = BButton/PointedBButton.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 			children = (
 				4EA2644B15C73DE600F375FA /* BButton.h */,
 				4EA2644C15C73DE600F375FA /* BButton.m */,
+				B8BC4AA1170F13D0006AF8BC /* PointedBButton.h */,
+				B8BC4AA2170F13D0006AF8BC /* PointedBButton.m */,
 			);
 			name = BButton;
 			path = "BButton Demo";
@@ -184,6 +189,7 @@
 				4EA2643C15C73DA600F375FA /* MBAppDelegate.m in Sources */,
 				4EA2643F15C73DA600F375FA /* MBViewController.m in Sources */,
 				4EA2644D15C73DE600F375FA /* BButton.m in Sources */,
+				B8BC4AA3170F13D0006AF8BC /* PointedBButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +273,7 @@
 		4EA2644915C73DA700F375FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BButton Demo/BButton Demo-Prefix.pch";
 				INFOPLIST_FILE = "BButton Demo/BButton Demo-Info.plist";
@@ -278,6 +285,7 @@
 		4EA2644A15C73DA700F375FA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BButton Demo/BButton Demo-Prefix.pch";
 				INFOPLIST_FILE = "BButton Demo/BButton Demo-Info.plist";
@@ -305,6 +313,7 @@
 				4EA2644A15C73DA700F375FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

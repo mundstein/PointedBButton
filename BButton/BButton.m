@@ -134,7 +134,7 @@
     CGFloat shadowBlurRadius = 2;
     
     //// Rounded Rectangle Drawing
-    UIBezierPath* roundedRectanglePath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(0.5, 0.5, rect.size.width-1.0, rect.size.height-1.0) cornerRadius: 6];
+    UIBezierPath* roundedRectanglePath = [self getShapeInRect:rect forContext:context];
     CGContextSaveGState(context);
     [roundedRectanglePath addClip];
     CGContextDrawLinearGradient(context, _gradient, CGPointMake(0.0, self.highlighted ? rect.size.height-0.5 : 0.5), CGPointMake(0.0, self.highlighted ? 0.5 : rect.size.height-0.5), 0);
@@ -171,6 +171,10 @@
     [border setStroke];
     roundedRectanglePath.lineWidth = 1;
     [roundedRectanglePath stroke];
+}
+
+-(UIBezierPath *)getShapeInRect:(CGRect)rect forContext:(CGContextRef)context {
+	return [UIBezierPath bezierPathWithRoundedRect: CGRectMake(0.5, 0.5, rect.size.width-1.0, rect.size.height-1.0) cornerRadius: 6];
 }
 
 - (UIColor *)lightenColor:(UIColor *)oldColor value:(float)value {
@@ -233,7 +237,7 @@
 
 - (BOOL) isLightColor:(UIColor *)color {
     int   totalComponents = CGColorGetNumberOfComponents(color.CGColor);
-    bool  isGreyscale     = totalComponents == 2 ? YES : NO;
+    bool  isGreyscale     = totalComponents == 2;
     
     CGFloat* components = (CGFloat *)CGColorGetComponents(color.CGColor);
     CGFloat sum;
