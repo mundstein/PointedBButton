@@ -26,7 +26,7 @@ Assuming you have already imported BButton, start by importing <code>PointedBBut
 
 		#import "PointedBButton.h"
 		
-2. Create the PointedBButton and add it to a visible view :
+2. Create the PointedBButton and add it to a visible view. It will just look like a BButton unless you call <code>setDirection</code> to either <code>PointedButtonDirectionLeft</code> or <code>PointedButtonDirectionRight</code>.
 
 		PointedBButton *btn = [[PointedBButton alloc] initWithFrame:CGRectMake(32.0, 20.0, 112.0, 40.0)];
         [btn setTitle:@"Login" forState:UIControlStateNormal]; // Set the button title
