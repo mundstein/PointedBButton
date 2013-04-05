@@ -45,8 +45,8 @@ Example with some random colors: see above.
 License
 -------
 
-Copyright for BButton (c) 2013 Mathieu Bolard. All rights reserved. </br>
-Copyright (c) 2013, Sascha Mundstein. All rights reserved.
+Copyright for BButton (c) 2013 Mathieu Bolard. All rights reserved. <br />
+Copyright PointedBButton (c) 2013, Sascha Mundstein. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
  
